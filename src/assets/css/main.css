@@ -2,28 +2,36 @@
 @font-face {
   font-family: 'Circe Light';
   src: url('../fonts/Circe-Light.eot');
-  src: url('../fonts/Circe-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/Circe-Light.woff') format('woff'), url('../fonts/Circe-Light.ttf') format('truetype');
+  src: url('../fonts/Circe-Light.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Circe-Light.woff') format('woff'),
+    url('../fonts/Circe-Light.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Circe Regular';
   src: url('../fonts/Circe-Regular.eot');
-  src: url('../fonts/Circe-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Circe-Regular.woff') format('woff'), url('../fonts/Circe-Regular.ttf') format('truetype');
+  src: url('../fonts/Circe-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Circe-Regular.woff') format('woff'),
+    url('../fonts/Circe-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Circe Bold';
   src: url('../fonts/Circe-Bold.eot');
-  src: url('../fonts/Circe-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Circe-Bold.woff') format('woff'), url('../fonts/Circe-Bold.ttf') format('truetype');
+  src: url('../fonts/Circe-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Circe-Bold.woff') format('woff'),
+    url('../fonts/Circe-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Circe Extra Bold';
   src: url('../fonts/Circe-ExtraBold.eot');
-  src: url('../fonts/Circe-ExtraBold.eot?#iefix') format('embedded-opentype'), url('../fonts/Circe-ExtraBold.woff') format('woff'), url('../fonts/Circe-ExtraBold.ttf') format('truetype');
+  src: url('../fonts/Circe-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Circe-ExtraBold.woff') format('woff'),
+    url('../fonts/Circe-ExtraBold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -80,7 +88,7 @@ h4 {
 }
 .button-transparent:before {
   content: '';
-  background: url("../img/camera.svg") no-repeat center;
+  background: url('../img/camera.svg') no-repeat center;
   width: 1.6rem;
   height: 1.6rem;
   display: inline-block;
@@ -157,7 +165,7 @@ h4 {
 }
 .header-menu li a:after {
   content: '';
-  background-image: url("../img/down-arrow.svg");
+  background-image: url('../img/down-arrow.svg');
   margin-left: 0.7rem;
   width: 1.2rem;
   height: 1rem;
@@ -205,67 +213,27 @@ h4 {
   color: inherit;
   text-decoration: none;
 }
-.main {
-  background-color: #f7e7e6;
-  padding-top: 3rem;
-  /* Making it beautiful */
 
-}
-.main .file_upload {
-  position: relative;
-  overflow: hidden;
-  font-size: 1em;
-  /* example */
-
-  height: 4em;
-  /* example */
-
-  line-height: 2em /* the same as height */
-;
-}
-.main .file_upload > button {
-  float: right;
-  width: 8em;
-  /* example */
-
-  height: 100%;
-}
-.main .file_upload > div {
-  padding-left: 1em;
-  /* example */
-
-}
-.main .file_upload input[type=file] {
-  position: absolute;
-  left: 0;
-  top: 0;
+.file-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 100%;
-  transform: scale(20);
-  letter-spacing: 10em;
-  /* IE 9 fix */
-
-  -ms-transform: scale(20);
-  /* IE 9 fix */
-
-  opacity: 0;
+  margin-bottom: 2em;
+  padding: 1rem;
+  border: 2px dashed #c51abb;
+  border-radius: 50px;
+  background-color: transparent;
+  font-size: 1em;
+  color: #c51abb;
+  transition: background 0.2s;
+  position: relative;
   cursor: pointer;
 }
-.main .file_upload > button {
-  transition: background 0.2s;
-  border-radius: 50px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  background-color: transparent;
-  font-size: 1.5rem;
-  color: #c51abb;
-  border: 2px solid #c51abb;
-  padding: 1.5rem;
-}
-.main .file_upload > button:before {
+
+.file_upload:before {
   content: '';
-  background: url("../img/camera.svg") no-repeat center;
+  background: url('../img/camera.svg') no-repeat center;
   width: 1.6rem;
   height: 1.6rem;
   display: inline-block;
@@ -274,6 +242,29 @@ h4 {
   right: 2px;
   background-size: 100%;
 }
+
+.file-upload input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.file-upload span {
+  color: #000;
+  position: absolute;
+  left: 50%;
+  bottom: -25px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.main {
+  background-color: #f7e7e6;
+  padding-top: 3rem;
+  /* Making it beautiful */
+}
+
 .main .logo {
   font-size: 2.5rem;
   font-family: 'Circe Extra Bold', sans-serif;
@@ -302,7 +293,7 @@ h4 {
 }
 .main .phone:before {
   content: '';
-  background: url("../img/24-hours.svg") no-repeat center;
+  background: url('../img/24-hours.svg') no-repeat center;
   width: 2.4rem;
   height: 2.4rem;
   display: inline-block;
@@ -460,7 +451,7 @@ h4 {
   margin-bottom: 6rem;
 }
 .styles .button-transparent:before {
-  background: url("../img/reload.svg") no-repeat center;
+  background: url('../img/reload.svg') no-repeat center;
   background-size: 100%;
   margin-right: 1rem;
 }
@@ -491,7 +482,6 @@ h4 {
 .calc {
   padding: 8rem 0 4rem 0;
   /* Making it beautiful */
-
 }
 .calc h2,
 .calc .p-heading {
@@ -545,68 +535,6 @@ h4 {
   margin-left: 2rem;
   margin-right: -2rem;
   text-align: justify;
-}
-.calc .file_upload {
-  position: relative;
-  overflow: hidden;
-  font-size: 1em;
-  /* example */
-
-  height: 4em;
-  /* example */
-
-  line-height: 2em /* the same as height */
-;
-}
-.calc .file_upload > button {
-  float: right;
-  width: 8em;
-  /* example */
-
-  height: 100%;
-}
-.calc .file_upload > div {
-  padding-left: 1em /* example */
-;
-}
-.calc .file_upload input[type=file] {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  transform: scale(20);
-  letter-spacing: 10em;
-  /* IE 9 fix */
-
-  -ms-transform: scale(20);
-  /* IE 9 fix */
-
-  opacity: 0;
-  cursor: pointer;
-}
-.calc .file_upload > button {
-  transition: background 0.2s;
-  border-radius: 50px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  background-color: transparent;
-  font-size: 1.5rem;
-  color: #c51abb;
-  border: 2px dashed #c51abb;
-  padding: 1.5rem;
-}
-.calc .file_upload > button:before {
-  content: '';
-  background: url("../img/camera.svg") no-repeat center;
-  width: 1.6rem;
-  height: 1.6rem;
-  display: inline-block;
-  position: relative;
-  top: 3px;
-  right: 2px;
-  background-size: 100%;
 }
 .portfolio {
   padding-top: 8rem;
@@ -851,7 +779,7 @@ h4 {
 }
 .feedback-block .button-order:before {
   content: '';
-  background-image: url("../img/heart.png");
+  background-image: url('../img/heart.png');
   background-size: 100%;
   width: 2rem;
   height: 2rem;
@@ -1137,73 +1065,6 @@ h4 {
   height: 100%;
   background-color: rgba(178, 80, 188, 0.8);
   /* Making it beautiful */
-
-}
-.popup-design input[name="name"] {
-  margin-top: 2rem;
-}
-.popup-design .file_upload {
-  position: relative;
-  overflow: hidden;
-  font-size: 1em;
-  /* example */
-
-  height: 4em;
-  /* example */
-
-  line-height: 2em /* the same as height */
-;
-}
-.popup-design .file_upload > button {
-  float: right;
-  width: 8em;
-  /* example */
-
-  height: 100%;
-}
-.popup-design .file_upload > div {
-  padding-left: 1em;
-  /* example */
-
-}
-.popup-design .file_upload input[type=file] {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  transform: scale(20);
-  letter-spacing: 10em;
-  /* IE 9 fix */
-
-  -ms-transform: scale(20);
-  /* IE 9 fix */
-
-  opacity: 0;
-  cursor: pointer;
-}
-.popup-design .file_upload > button {
-  transition: background 0.2s;
-  border-radius: 50px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  background-color: transparent;
-  font-size: 1.5rem;
-  color: #c51abb;
-  border: 2px dashed #c51abb;
-  padding: 1.5rem;
-}
-.popup-design .file_upload > button:before {
-  content: '';
-  background: url("../img/camera.svg") no-repeat center;
-  width: 1.6rem;
-  height: 1.6rem;
-  display: inline-block;
-  position: relative;
-  top: 3px;
-  right: 2px;
-  background-size: 100%;
 }
 .popup-design .form {
   margin: 0;
@@ -1261,24 +1122,6 @@ h4 {
 @media (max-width: 1399px) {
   .paints {
     display: none;
-  }
-  .calc .file_upload > div {
-    display: none;
-  }
-  .calc .file_upload > button {
-    width: 100%;
-  }
-  .popup-design .file_upload > div {
-    display: none;
-  }
-  .popup-design .file_upload > button {
-    width: 100%;
-  }
-  .main .file_upload > div {
-    display: none;
-  }
-  .main .file_upload > button {
-    width: 100%;
   }
 }
 @media (max-width: 1199px) {
@@ -1443,7 +1286,7 @@ h4 {
     bottom: -2.9rem;
   }
   .card-3 .card-block .p-heading {
-    margin: 2.5rem 0  3.5rem 0;
+    margin: 2.5rem 0 3.5rem 0;
   }
   .card-3 .card-block-text {
     padding-top: 0;
